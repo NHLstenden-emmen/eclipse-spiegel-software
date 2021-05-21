@@ -1,0 +1,1 @@
+# eclipse-spiegel-software
