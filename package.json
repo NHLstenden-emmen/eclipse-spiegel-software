@@ -1,0 +1,27 @@
+{
+    "name": "eclipse",
+    "version": "1.0.0",
+    "description": "Eclipse Smartmirror",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "install": "electron-rebuild"
+    },
+    "author": "INF1D",
+    "devDependencies": {
+        "@serialport/parser-readline": "^9.0.7",
+        "electron": "^11.2.0",
+        "electron-rebuild": "^2.3.4",
+        "rpio": "^2.4.2"
+    },
+    "dependencies": {
+        "dnssd": "^0.4.1",
+        "electron-store": "^8.0.0",
+        "fs-extra": "^10.0.0",
+        "node-wifi": "^2.0.14",
+        "onoff": "^6.0.3",
+        "robotjs": "^0.6.0",
+        "serialport": "^9.0.6",
+        "ws": "^7.4.5"
+    }
+}
