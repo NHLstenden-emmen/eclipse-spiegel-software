@@ -24,3 +24,8 @@
 	grid-area: vijfenveertig;
 	background-color: red;
 }
+
+.gridlayout .Calender {
+	grid-area: elf;
+	background-color: rgb(55, 182, 23);
+}
