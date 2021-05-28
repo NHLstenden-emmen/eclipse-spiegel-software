@@ -6,8 +6,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Document</title>
 		<link rel="stylesheet" href="main.css">
+		<!-- fontawsom -->
+		<link href="fontawesome-free-5.15.3-web/css/all.css" rel="stylesheet"> 
+		<script defer src="fontawesome-free-5.15.3-web/js/all.js"></script> 
+		<!-- load all widget css -->
 		<?php 
-			// load all widget css
 			$path = 'widgets/css/';
 			if ($handle = opendir($path)) {
 				while (false !== ($entry = readdir($handle))) {
@@ -21,7 +24,8 @@
 	</head>
 	<body>
 		<div class="gridlayout">
-			
+  <i class="fas fa-user"></i> <!-- uses solid style -->
+  <i class="fab fa-github-square"></i> <!-- uses brand style -->
 			<?php 
 				// load all widgets html
 				$path = 'widgets/design/';
