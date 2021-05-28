@@ -12,7 +12,7 @@
 			if ($handle = opendir($path)) {
 				while (false !== ($entry = readdir($handle))) {
 					if ($entry != "." && $entry != "..") {
-						include $path. $entry;
+						echo '<link rel="stylesheet" href="'.$path. $entry. '">';
 					}
 				}
 				closedir($handle);
