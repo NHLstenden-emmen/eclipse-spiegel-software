@@ -12,7 +12,7 @@
             "eenendertig tweeëndertig drieëndertig vierendertig vijfendertig"
             "zesendertig zevenendertig achtendertig negenendertig veertig"
             "eenenveertig tweeënveertig drieënveertig vierenveertig vijfenveertig";
-			grid-template-rows: 220px 220px 220px 220px 220px 220px 220px 220px 220px ;
+			grid-template-rows: 220px 220px 220px 220px 220px 220px 220px 220px 220px;
 			grid-template-columns: 200px 200px 200px 200px 200px;
 }
 
@@ -27,5 +27,5 @@
 
 .gridlayout .Calender {
 	grid-area: elf;
-	background-color: rgb(55, 182, 23);
+	background-color: rgb(255, 0, 0);
 }
