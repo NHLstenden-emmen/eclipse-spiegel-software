@@ -4,27 +4,32 @@
 	height: 100%;
 	grid-template-areas: 
     "links right1"
-    "links right1"
-    "left3 right1";
+    "links right2"
+    "left3 right3";
     grid-template-rows: 73px 73px 73px;
     grid-template-columns: 130px 70px;
 }
 
-.gridlayout .Calander .Day{
+.gridlayout .Day{
     grid-column: links;
     background-color: rgb(255, 0, 0);
-    padding-left: 30px;
-    font-size: 45px;
+    font-size: 42px;
+    padding-left: 45px;
+    padding-bottom: 30px;
+    
 }
 .gridlayout .Month{
-    grid-area: right1;
+    grid-area: right2;
     background-color: rgb(255, 0, 0);
     font-size: 30px;
+    text-align: center;
+    margin-top: -10px;
 }
 .gridlayout .Year{
     grid-area: left3;
     background-color: rgb(255, 0, 0);
     font-size: 30px;
-    padding-left: 20px;
+    padding-left: 23px;
+    margin-top: -7px;
     
 }
