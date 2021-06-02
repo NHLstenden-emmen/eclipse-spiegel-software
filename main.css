@@ -29,3 +29,9 @@
 	grid-area: elf;
 	background-color: rgb(255, 0, 0);
 }
+
+.gridlayout .Reminder {
+	grid-area: twee;
+	background-color: rgb(229, 255, 0);
+}
+
