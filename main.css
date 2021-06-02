@@ -35,3 +35,13 @@
 	background-color: rgb(229, 255, 0);
 }
 
+.gridlayout .Joke {
+	grid-area: zes;
+	background-color: rgb(255, 0, 212);
+}
+
+.gridlayout .Goodmorning {
+	grid-area: negentien;
+	background-color: rgb(77, 141, 77);
+}
+

@@ -1,0 +1,9 @@
+.Joke .container{
+    display: flex;
+    padding-left: 10px;
+    height: 100%;
+    font-size: 15px;
+    padding-right: 10px;
+    text-align: center;
+    padding-top: 30px;
+}
