@@ -14,6 +14,7 @@
             "eenenveertig tweeënveertig drieënveertig vierenveertig vijfenveertig";
 			grid-template-rows: 220px 220px 220px 220px 220px 220px 220px 220px 220px;
 			grid-template-columns: 200px 200px 200px 200px 200px;
+			font-family: Bahnschrift;
 }
 
 .gridlayout .news {
@@ -44,4 +45,10 @@
 	grid-area: negentien;
 	background-color: rgb(77, 141, 77);
 }
+
+.gridlayout .Weather {
+	grid-area: negen;
+	background-color: rgb(0, 225, 255);
+}
+
 
