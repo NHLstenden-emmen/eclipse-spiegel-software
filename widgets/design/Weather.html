@@ -1,5 +1,22 @@
 <div class="WeatherWid"> 
-    <div class="LC"> <h1> Emmen </h1> </div>
+    <div class="LC"> <p> <span id="city"></span> </p> </div>
         <div class="PC"> <i class="fas fa-cloud-sun"></i> </div>
             <div class="CC"> <h1 class="CC-text"> 13° </h1> <h1 class="WH"> Cloudy </h1> </div>
 </div>
+
+<script>
+    const api_url = 'http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=8eaf929513701812d5169ea2d1cce225'
+    async function getISS(){
+        const response = await fetch(api_url)
+        const data = await response.json();
+        const { city } = data;
+       
+        //document.getElementById('temp').textContent = tempeture;
+        document.getElementById('city').textContent = city;
+        //document.getElementById('discription').textContent = description;
+
+    }
+        getISS();
+    
+</script>
+
