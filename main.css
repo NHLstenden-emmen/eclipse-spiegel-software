@@ -15,40 +15,40 @@
 			grid-template-rows: 220px 220px 220px 220px 220px 220px 220px 220px 220px;
 			grid-template-columns: 200px 200px 200px 200px 200px;
 			font-family: Bahnschrift;
+			background-color: black;
+			color: white;
+}
+
+body{
+	margin: 0px;
 }
 
 .gridlayout .news {
 	grid-area: zeventien;
-	background-color: blue;
 }
 .gridlayout .meme {
 	grid-area: vijfenveertig;
-	background-color: red;
 }
 
 .gridlayout .Calender {
 	grid-area: elf;
-	background-color: rgb(255, 0, 0);
 }
 
 .gridlayout .Reminder {
 	grid-area: twee;
-	background-color: rgb(229, 255, 0);
 }
 
 .gridlayout .Joke {
 	grid-area: zes;
-	background-color: rgb(255, 0, 212);
 }
 
 .gridlayout .Goodmorning {
 	grid-area: negentien;
-	background-color: rgb(77, 141, 77);
 }
 
 .gridlayout .Weather {
 	grid-area: negen;
-	background-color: rgb(0, 225, 255);
 }
+
 
 
