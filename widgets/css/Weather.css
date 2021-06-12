@@ -10,7 +10,7 @@
     grid-template-columns: 120px 80px;
 }
 
-.gridlayout .LC{
+.gridlayout .result{
     grid-area: Location;
     font-size: 17px;
     text-align: left;

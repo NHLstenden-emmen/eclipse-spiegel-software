@@ -10,4 +10,20 @@ request.onload = ()=>{
         console.log('error ${request.status}')
        }
 }
+function loadJSON(){
+  fetch('http://eclipse.serverict.nl/api/widget')
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
+    let html = '';
+    data.forEach(function(weather){
+        html += `
+          <li>${weather.temp} ${weather.discription} ${weather.city}
+          </li>
+        `;
+    });
+    document.getElementById('result').innerHTML = html;
+  })
+}
 

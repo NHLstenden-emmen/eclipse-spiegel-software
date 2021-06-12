@@ -24,14 +24,14 @@ body{
 }
 
 .gridlayout .news {
-	grid-area: zeventien;
+	grid-area: drieënveertig ;
 }
 .gridlayout .meme {
 	grid-area: vijfenveertig;
 }
 
 .gridlayout .Calender {
-	grid-area: elf;
+	grid-area: één;
 }
 
 .gridlayout .Reminder {
@@ -47,8 +47,10 @@ body{
 }
 
 .gridlayout .Weather {
-	grid-area: negen;
+	grid-area: vijf;
 }
 
-
+.gridlayout .Time {
+	grid-area: veertien;
+}
 
