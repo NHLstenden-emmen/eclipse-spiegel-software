@@ -1,4 +1,7 @@
-.news .container{
+#news{
+    display: none;
+}
+#news .container{
     display: flex;
     justify-content: space-between;
     padding-left: 10px;
@@ -7,7 +10,7 @@
     padding-right: 10px;
     align-items: center;
 }
-.news .container .arrow{
+#news .container .arrow{
     opacity: .5;
 }
     

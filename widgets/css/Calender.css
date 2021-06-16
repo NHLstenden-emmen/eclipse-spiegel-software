@@ -1,3 +1,6 @@
+#calender {
+    display: none;
+}
 .gridlayout .CalenderWid{
 	display: grid;
 	width: 100%;

@@ -1,3 +1,6 @@
+#weather{
+    display: none;
+}
 .gridlayout .WeatherWid{
 	display: grid;
 	width: 100%;
@@ -10,7 +13,7 @@
     grid-template-columns: 120px 80px;
 }
 
-.gridlayout .result{
+.gridlayout .City{
     grid-area: Location;
     font-size: 17px;
     text-align: left;
@@ -19,8 +22,7 @@
 
 .gridlayout .PC{
     grid-area: Picture;
-    font-size: 64px;
-    text-align: right;
+
 }
 
 .gridlayout .CC{
@@ -32,6 +34,7 @@
 }
 
 .WH{
+    
     text-align: start;
     margin-top: -9px;
 }

@@ -23,34 +23,138 @@ body{
 	margin: 0px;
 }
 
-.gridlayout .news {
-	grid-area: drieënveertig ;
-}
-.gridlayout .meme {
-	grid-area: vijfenveertig;
-}
-
-.gridlayout .Calender {
+.p1{
 	grid-area: één;
 }
-
-.gridlayout .Reminder {
+.p2{
 	grid-area: twee;
 }
-
-.gridlayout .Joke {
-	grid-area: zes;
+.p3{
+	grid-area: drie;
 }
-
-.gridlayout .Goodmorning {
-	grid-area: negentien;
+.p4{
+	grid-area: vier;
 }
-
-.gridlayout .Weather {
+.p5{
 	grid-area: vijf;
 }
-
-.gridlayout .Time {
+.p6{
+	grid-area: zes;
+}
+.p7{
+	grid-area: zeven;
+}
+.p8{
+	grid-area: acht;
+}
+.p9{
+	grid-area: negen;
+}
+.p10{
+	grid-area: tien;
+}
+.p11{
+	grid-area: elf;
+}
+.p12{
+	grid-area: twaalf;
+}
+.p13{
+	grid-area: dertien;
+}
+.p14{
 	grid-area: veertien;
 }
-
+.p15{
+	grid-area: vijftien;
+}
+.p16{
+	grid-area: zestien;
+}
+.p17{
+	grid-area: zeventien;
+}
+.p18{
+	grid-area: achttien;
+}
+.p19{
+	grid-area: negentien;
+}
+.p20{
+	grid-area: twintig;
+}
+.p21{
+	grid-area: eenentwintig;
+}
+.p22{
+	grid-area: tweeëntwintig;
+}
+.p23{
+	grid-area: drieëntwintig;
+}
+.p24{
+	grid-area: vierentwintig;
+}
+.p25{
+	grid-area: vijfentwintig;
+}
+.p26{
+	grid-area: zesentwintig;
+}
+.p27{
+	grid-area: zevenentwintig;
+}
+.p28{
+	grid-area: achtentwintig;
+}
+.p29{
+	grid-area: negenentwintig;
+}
+.p30{
+	grid-area: dertig;
+}
+.p31{
+	grid-area: eenendertig;
+}
+.p32{
+	grid-area: tweeëndertig;
+}
+.p33{
+	grid-area: drieëndertig;
+}
+.p34{
+	grid-area: vierendertig;
+}
+.p35{
+	grid-area: vijfendertig;
+}
+.p36{
+	grid-area: zesendertig;
+}
+.p37{
+	grid-area: zevenendertig;
+}
+.p38{
+	grid-area: achtendertig;
+}
+.p39{
+	grid-area: negenendertig;
+}
+.p40{
+	grid-area: veertig;
+}
+.p41{
+	grid-area: eenenveertig;
+}
+.p42{
+	grid-area: tweeënveertig;
+}
+.p43{
+	grid-area: drieënveertig;
+}
+.p44{
+	grid-area: vierveertig;
+}
+.p45{
+	grid-area: vijfenveertig;
+}

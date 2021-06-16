@@ -31,7 +31,7 @@
 					while (false !== ($entry = readdir($handle))) {
 						if ($entry != "." && $entry != "..") {
 							$entryClassName = basename($entry, '.html');
-							echo "<div class='".$entryClassName."'>";
+							echo "<div id='".$entryClassName."'>";
 								include $path. $entry;
 							echo "</div>";
 						}
@@ -40,5 +40,6 @@
 				}
 			?>
 		</div>
+	<script src="WidgetLocation.js"></script>
 	</body>
 </html>

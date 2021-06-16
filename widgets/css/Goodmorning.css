@@ -1,3 +1,6 @@
+#morning {
+    display: none;
+}
 .gridlayout .Goodmorning{
 	display: grid;
 	width: 100%;

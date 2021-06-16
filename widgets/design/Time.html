@@ -1,3 +1,8 @@
 <div class="container">
-    <h1> 21:00 </h1>
+   <h1 id="timewid"> <span id="timespan"></span> </h1>
+    <script> 
+        var today = new Date();
+        var time = today.getHours() + ":" + today.getMinutes();
+        document.getElementById('timespan').innerHTML = time;
+        </script>
 </div>
