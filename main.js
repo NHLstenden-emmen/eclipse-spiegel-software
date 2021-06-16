@@ -1,7 +1,9 @@
 const path                    = require('path')
-const electron                = require('electron')
-const app                     = electron.app
+const { app, ipcMain } = require("electron");
 
+ipcMain.on("do-a-thing", (event, arg) => {
+    Serial.rgb(arg[0], arg[1], arg[2]);
+});
 let class_window              = require('./classes/application/Window'), Window;
 let class_logger              = require('./classes/logger/Logger'), Logger;
 let class_ws                  = require('./classes/connections/WebSocket'), WebSocket;
@@ -24,16 +26,14 @@ const ready = () => {
     WebSocket   = new class_ws(80);
     Wifi        = new class_wifi;
     Serial      = new class_serial;
-    Widgets     = new class_widgets;
 
-    Widgets.getDirectories().then(r => console.log(r));
 
     advertisement.start();
     Logger.log("mDNS", advertisement.state);
 
     createWindow();
 
-    Window.on('closed', function() {
+    Window.on('closed', () => {
         Window = null;
     })
 }

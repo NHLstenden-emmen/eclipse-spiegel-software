@@ -27,8 +27,8 @@ class Window extends BrowserWindow {
 
         // gracefully show when ready to prevent flickering
         this.once('ready-to-show', () => {
-          //  this.show();
-        //    this.setKiosk(true);
+          this.show();
+            this.setKiosk(true);
         });
     }
 }

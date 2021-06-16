@@ -8,7 +8,15 @@ const TAG               = "SerialManager";
 
 class SerialManager {
     constructor() {
-        this.tryOpen('COM3');
+       // this.tryOpen('COM3');
+
+        SerialPort.list().then( (data) => {
+            if(data.length === 0) {
+                this.Logger.log(TAG, "ESP32 not found!");
+            } else {
+                this.tryOpen(data[0].path);
+            }
+        });
         this.WifiManager = new WifiManager;
 
         this.Logger = new Logger;
@@ -21,8 +29,7 @@ class SerialManager {
             baudRate: 115200});
 
         this.openPort();
-
-        this.parser = this.port.pipe(new Readline({ delimiter: '\r\n' }))
+        this.parser = this.port.pipe(new Readline({ delimiter: '\r\n' }));
         this.parser.on('data', this.dataHandler)
     }
 
@@ -34,6 +41,17 @@ class SerialManager {
                 this.Logger.log(TAG, "ESP32 connected");
             }
         });
+    }
+
+    rgb = (r,g,b) => {
+        let json = '{"r": "'+ r +'", "g": "'+ g +'", "b": "'+ b +'"}';
+        console.log(json)
+        this.port.write(json, function(err) {
+            if (err) {
+                return console.log('Error on write: ', err.message)
+            }
+            console.log('message written')
+        })
     }
 
     dataHandler = (data) => {

@@ -42,17 +42,18 @@ class WidgetManager {
                             });
                         }
                     });
+                    Promise.all(promises).then((values) => {
+                        //let data = values.filter((obj) => !obj.isFile);
+                        //  console.log(values);
+                        return values;
+                    }, (reason) => {
+                        console.log("Not all the promise resolved");
+                        console.log(reason);
+                    });
                 });
             });
         });
-        Promise.all(promises).then((values) => {
-            //let data = values.filter((obj) => !obj.isFile);
-            //  console.log(values);
-            return values;
-        }, (reason) => {
-            console.log("Not all the promise resolved");
-            console.log(reason);
-        });
+
     }
 }
 
