@@ -1,7 +1,17 @@
 <div class="CalenderWid"> 
-    <div class="Day"> <h1> 20 </h1> </div>
-        <div class="Year"> <h1 class="year"> 2021 </h1> </div>
-             <div class="Month"> <h2> May </h2> </div>
-    
+    <div class="Day">  <h1> <span id="today"> </span> </h1> </div>
+        <div class="Year"> <h1 class="year"> <span id="year"></span>  </h1> </div>
+             <div class="Month">  <h2> <span id="Month"></span>  </h2> </div>
+    <script>
+        display_date()
+        function display_date(){
+            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "June",
+            "July", "Aug", "Sep", "Oct", "Nov", "Dec"]
+            dateObj = new Date()
+            document.getElementById('Month').innerHTML = monthNames[new Date().getMonth()];
+            document.getElementById('today').innerHTML = new Date().getDate();
+            document.getElementById('year').innerHTML = new Date().getFullYear();
+        }
+    </script>
 
 </div>

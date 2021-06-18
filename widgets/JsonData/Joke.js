@@ -1,20 +1,19 @@
-/*const request = new XMLHttpRequest();
-request.open("GET", "https://eclipse.serverict.nl/api/noAuth/widgets");
-//request.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=Emmen&appid=274e1a939869507f8611117cc192e236");
-request.send();
-request.onload = ()=>{
-  console.log(request);
-  if(request.status === 200){
-    jokeresponse = JSON.parse(request.response);
+const requestjoke = new XMLHttpRequest();
+requestjoke.open("GET", "https://eclipse.serverict.nl/api/noAuth/widgets");
+requestjoke.send();
+requestjoke.onload = ()=>{
+  if(requestjoke.status === 200){
+    jokeresponse = JSON.parse(requestjoke.response);
+    console.log(jokeresponse);
     for (i = 0; i < jokeresponse.length; i++) {
-      if(jokeresponse[i].type == "morning"){
+      if(jokeresponse[i].type == "geek_jokes"){
         recentdata = jokeresponse[i].recentdata;
-        console.log(JSON.parse(recentdata));
-
+        document.getElementById('joketxt').innerHTML = recentdata;
+      
       }
     }
 
   } else {
   console.log('error ${request.status}')
   } 
-}*/
+}

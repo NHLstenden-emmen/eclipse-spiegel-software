@@ -10,22 +10,13 @@ requestWidgetLocation.onload = ()=>{
     for (i = 0; i < 45; i++) {
       WidgetLocation(WidgetLocationArray[i][0],i)
     }
+    element = document.getElementById("calender");
+    element.classList.add("p4");
+    element.style.display = "block";
   } else {
   console.log('error ${request.status}')
   } 
 }
-
-/*const requestWidgetSettings = new XMLHttpRequest();
-requestWidgetSettings.open("GET", "https://eclipse.serverict.nl/api/widgets");
-requestWidgetSettings.send();
-requestWidgetSettings.onload = ()=>{
-  if(requestWidgetSettings.status === 200){
-    responseWidgetSettings = JSON.parse(requestWidgetSettings.response);
-    console.log(responseWidgetSettings);
-  } else {
-  console.log('error ${request.status}')
-  } 
-}*/
 
 function WidgetLocation(item, index){
   //console.log(item.valueOf());
