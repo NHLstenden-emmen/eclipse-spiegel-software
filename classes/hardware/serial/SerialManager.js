@@ -3,13 +3,14 @@ const SerialPort        = require('serialport')
 const Readline          = require('@serialport/parser-readline')
 const Logger            = require('../../logger/Logger');
 const WifiManager       = require('../../hardware/wifi/WifiManager');
+let class_ws                  = require('../../connections/WebSocket'), WebSocket;
 
+let dnssd                     = require('dnssd'),
+                                advertisement = new dnssd.Advertisement(dnssd.tcp('eclipse-mirror'), 49154);
 const TAG               = "SerialManager";
 
 class SerialManager {
     constructor() {
-       // this.tryOpen('COM3');
-
         SerialPort.list().then( (data) => {
             if(data.length === 0) {
                 this.Logger.log(TAG, "ESP32 not found!");
@@ -18,6 +19,7 @@ class SerialManager {
             }
         });
         this.WifiManager = new WifiManager;
+        this.WebSocket   = new class_ws(49154);
 
         this.Logger = new Logger;
         this.Logger.log(TAG, "started");
@@ -51,18 +53,25 @@ class SerialManager {
                 return console.log('Error on write: ', err.message)
             }
             console.log('message written')
-        })
+        });
     }
 
     dataHandler = (data) => {
         try {
                 let json = JSON.parse(data);
                 switch (json.type) {
-                    case 'wifi-connect':
-                            let ssid = json.ssid;
-                            let password = json.password;
-                            this.WifiCredentialsRead = true;
-                            this.WifiManager.connect(ssid, password);
+                    case 'wifi-connect':              
+                    console.log(json);              
+                           this.WifiManager.connect(json.body.ssid, json.body.password);
+                            this.port.write('{"status": "true"}', function(err) {
+                                if (err) {
+                                    return console.log('Error on write: ', err.message)
+                                }
+                                console.log('message written success')
+                            });
+                    
+                            advertisement.start();
+                            this.Logger.log("mDNS", advertisement.state);  
                         break;
                     default:
                             this.Logger.log(TAG, "ESP32: " + data);

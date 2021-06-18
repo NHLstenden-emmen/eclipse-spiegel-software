@@ -5,10 +5,11 @@ const url = require('url')
 
 // default window settings
 const defaultProps = {
-   // frame: false,
+  //  frame: false,
     //alwaysOnTop: true,
     backgroundColor: '#000000',
     show: false,
+  //  fullscreen: true,
     webPreferences: {
         contextIsolation: true,
         nodeIntegration: true,
@@ -27,8 +28,9 @@ class Window extends BrowserWindow {
 
         // gracefully show when ready to prevent flickering
         this.once('ready-to-show', () => {
-          this.show();
-            this.setKiosk(true);
+           this.show();
+           //this.fullscreen
+           // this.setKiosk(true);
         });
     }
 }

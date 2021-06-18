@@ -1,0 +1,59 @@
+.gridlayout{
+	display: grid;
+	width: 100%;
+	height: 100%;
+	grid-template-areas: 
+            "één twee drie vier vijf"
+            "zes zeven acht negen tien"
+            "elf twaalf dertien veertien vijftien"
+            "zestien zeventien achttien negentien twintig"
+            "eenentwintig tweeëntwintig drieëntwintig vierentwintig vijfentwintig"
+            "zesentwintig zevenentwintig achtentwintig negenentwintig dertig"
+            "eenendertig tweeëndertig drieëndertig vierendertig vijfendertig"
+            "zesendertig zevenendertig achtendertig negenendertig veertig"
+            "eenenveertig tweeënveertig drieënveertig vierenveertig vijfenveertig";
+			grid-template-rows: 220px 220px 220px 220px 220px 220px 220px 220px 220px;
+			grid-template-columns: 200px 200px 200px 200px 200px;
+			font-family: Bahnschrift;
+			background-color: black;
+			color: white;
+}
+
+::-webkit-scrollbar {         
+	display: none;       
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0px;
+}
+
+.gridlayout .news {
+	grid-area: zeventien;
+}
+.gridlayout .meme {
+	grid-area: vijfenveertig;
+}
+
+.gridlayout .Calender {
+	grid-area: elf;
+}
+
+.gridlayout .Reminder {
+	grid-area: twee;
+}
+
+.gridlayout .Joke {
+	grid-area: zes;
+}
+
+.gridlayout .Goodmorning {
+	grid-area: negentien;
+}
+
+.gridlayout .Weather {
+	grid-area: negen;
+}
+
+
+

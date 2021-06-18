@@ -1,61 +1,59 @@
+
+
 <!DOCTYPE html>
-<html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-    .slider {
-        -webkit-appearance: none;
-        width: 100%;
-        height: 15px;
-        border-radius: 5px;
-        background: #d3d3d3;
-        outline: none;
-        opacity: 0.7;
-        -webkit-transition: .2s;
-        transition: opacity .2s;
-    }
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<link rel="stylesheet" href="widgets/main.css">
+		<!-- fontawsom -->
+		<link href="fontawesome-free-5.15.3-web/css/all.css" rel="stylesheet"> 
+		<script defer src="fontawesome-free-5.15.3-web/js/all.js"></script> 
+		<!-- load all widget css -->
+		<link rel="stylesheet" href="widgets/css/Calender.css"><link rel="stylesheet" href="widgets/css/Goodmorning.css"><link rel="stylesheet" href="widgets/css/Joke.css"><link rel="stylesheet" href="widgets/css/meme.css"><link rel="stylesheet" href="widgets/css/news.css"><link rel="stylesheet" href="widgets/css/Reminder.css"><link rel="stylesheet" href="widgets/css/Weather.css">	</head>
+	<body>
+    <script src="diffCamEngine.js"></script>
+    <script src="motionPinger.js"></script>
+		<div class="gridlayout">
+			<div class='Calender'><div class="CalenderWid"> 
+    <div class="Day"> <h1> 20 </h1> </div>
+        <div class="Year"> <h1 class="year"> 2021 </h1> </div>
+             <div class="Month"> <h2> May </h2> </div>
+    
 
-    .slider:hover {opacity: 1;}
-
-    .slider::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-
-    .slider::-moz-range-thumb {
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        background: #4CAF50;
-        cursor: pointer;
-    }
-    #redSlider::-webkit-slider-thumb {background: red;}
-    #redSlider::-moz-range-thumb {background: red;}
-    #greenSlider::-webkit-slider-thumb {background: green;}
-    #greenSlider::-moz-range-thumb {background: green;}
-    #blueSlider::-webkit-slider-thumb {background: blue;}
-    #blueSlider::-moz-range-thumb {background: blue;}
-</style>
-<body>
-
-<div class="w3-container">
-    <h1>RGB Color</h1>
-    <div class="w3-cell-row">
-        <div class="w3-container w3-cell w3-mobile">
-            <p><input type="range" min="0" max="255" value="0" class="slider" id="redSlider"></p>
-            <p><input type="range" min="0" max="255" value="0" class="slider" id="greenSlider"></p>
-            <p><input type="range" min="0" max="255" value="0" class="slider" id="blueSlider"></p>
-        </div>
-        <div class="w3-container w3-cell w3-mobile" style="background-color:black" id="colorShow">
-            <div></div>
-        </div>
-    </div>
-    <p>Or pick a color: <input type="color" id="pickColor"></p>
+</div></div><div class='Goodmorning'><div class="container"> 
+    <div class="T1"> <h1> Goodmorning</h1> </div>
+        <div class="T2"> <h2> Sunshine </h2>  </div>  
+    
+</div></div><div class='Joke'><div class="container"> 
+    <h1> If you look closely you see a clown </h1>
+</div></div><div class='meme'>meme</div><div class='news'><div class="container">
+    <div class="arrow"><i class="fas fa-arrow-left"></i></div>
+    <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+</div></div><div class='Reminder'><div class="Reminders"> 
+   <div class="Title"> <h1 id="Title"> Reminders Today </h1> </div> 
+    <div class="R1"><i class="fas fa-check"></i> </div>
+      <div class="RT1"> <h1> Boodschappen doen </h1> </div>
+        <div class="R2"> <i class="far fa-square"></i> </div>
+          <div class="RT2"> <h1> Bellen </h1> </div>
+            <div class="R3"> <i class="far fa-square"></i> </div>
+              <div class="RT3"> <h1> Tandarts </h1> </div>
 </div>
-</body>
+
+ </div><div class='Weather'>
+    <div class="WeatherWid"> 
+        <div class="LC"> <h1>Emmen</h1></div>
+            <div class="PC"> <i class="fas fa-cloud-sun"></i> </div>
+                <div class="CC"> <h1 class="CC-text"> 13° </h1> <h1 class="WH"> <span id="discription"> </span> Cloudy </h1> </div>
+    </div>
+    <script src="widgets/JsonData/WeatherTest.js"></script>
+
+
+
+
+
+</div>		</div>
+	</body>
 </html>
-<script src="./js/renderer.js"></script>

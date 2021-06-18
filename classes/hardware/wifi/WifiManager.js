@@ -1,22 +1,32 @@
 'use strict'
-const wifi                  = require('node-wifi');
+const WiFiControl = require('wifi-control');
+
 let Logger                  = require('../../logger/Logger');
 const TAG                   = "WifiManager";
 
 class WifiManager {
     constructor() {
-        wifi.init({iface: null});
-        this.Logger = new Logger;
+        WiFiControl.init({
+            debug: true,
+            iface: 'wlan0'
+          });        
+          
+          this.Logger = new Logger;
     }
 
     connect = (ssid, pass) => {
-        wifi.connect({ssid: ssid, password: pass}, error => {
-            if (error) {
-                this.Logger.log(TAG, "Error connecting to wifi!");
-            } else  {
-                this.Logger.log(TAG, "Error successfully connected to WiFi!");
+          WiFiControl.connectToAP( {
+            ssid: ssid,
+            password: pass
+          }, function(err, response) {
+            if (err) {
+                console.log(err);
+                return false;
+            } else {
+                console.log(response);
+                return true;
             }
-        });
+          });
     }
 
     disconnect = () => {
