@@ -59,7 +59,6 @@ class WebSocket {
         this.ws.close();
         this.Logger.log(TAG, "stopped");
     }
-
 }
 
 module.exports = WebSocket
