@@ -3,10 +3,8 @@ const SerialPort        = require('serialport')
 const Readline          = require('@serialport/parser-readline')
 const Logger            = require('../../logger/Logger');
 const WifiManager       = require('../../hardware/wifi/WifiManager');
-let class_ws                  = require('../../connections/WebSocket'), WebSocket;
-
-let dnssd                     = require('dnssd'),
-                                advertisement = new dnssd.Advertisement(dnssd.tcp('eclipse-mirror'), 49154);
+//let class_ws            = require('../../connections/WebSocket');
+let dnssd               = require('dnssd'), advertisement = new dnssd.Advertisement(dnssd.tcp('eclipse-mirror'), 49154);
 const TAG               = "SerialManager";
 
 class SerialManager {
@@ -18,8 +16,9 @@ class SerialManager {
                 this.tryOpen(data[0].path);
             }
         });
+
         this.WifiManager = new WifiManager;
-        this.WebSocket   = new class_ws(49154);
+    //    this.WebSocket   = new class_ws(49154);
 
         this.Logger = new Logger;
         this.Logger.log(TAG, "started");
@@ -60,8 +59,8 @@ class SerialManager {
         try {
                 let json = JSON.parse(data);
                 switch (json.type) {
-                    case 'wifi-connect':              
-                    console.log(json);              
+                    case 'wifi-connect':
+                    console.log(json);
                            this.WifiManager.connect(json.body.ssid, json.body.password);
                             this.port.write('{"status": "true"}', function(err) {
                                 if (err) {
@@ -69,9 +68,9 @@ class SerialManager {
                                 }
                                 console.log('message written success')
                             });
-                    
+
                             advertisement.start();
-                            this.Logger.log("mDNS", advertisement.state);  
+                            this.Logger.log("mDNS", advertisement.state);
                         break;
                     default:
                             this.Logger.log(TAG, "ESP32: " + data);

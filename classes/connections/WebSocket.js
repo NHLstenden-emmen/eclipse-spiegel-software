@@ -19,29 +19,29 @@ class WebSocket {
         ws.on('close', (e)          => this.handleClose(e, ws));
     }
 
-    incomingHandler = (message, ws) => {
-        this.Logger.log(TAG, "Incoming: " + message);
-        let json = this.Logger.parseJSON(message);
-
-        if(json.hasOwnProperty("device")){
-            if(json.device === "mirror") {
-                this.Logger.log(TAG, "Mirror has connected!");
-                this.devices.set("mirror", {"websocket": ws});
-                this.sendToMirror({"hoi": "Hoi"});
-            }
-        } else {
-            switch (message.type) {
-                default:
-                    break;
-            }
-        }
-
-        //switch structure
-    }
-
-    handleClose = (e, ws) => {
-        this.Logger.log(TAG, "Closed: " + e);
-    }
+    // incomingHandler = (message, ws) => {
+    //     this.Logger.log(TAG, "Incoming: " + message);
+    //     let json = this.Logger.parseJSON(message);
+    //
+    //     if(json.hasOwnProperty("device")){
+    //         if(json.device === "mirror") {
+    //             this.Logger.log(TAG, "Mirror has connected!");
+    //             this.devices.set("mirror", {"websocket": ws});
+    //             this.sendToMirror({"hoi": "Hoi"});
+    //         }
+    //     } else {
+    //         switch (message.type) {
+    //             default:
+    //                 break;
+    //         }
+    //     }
+    //
+    //     //switch structure
+    // }
+    //
+    // handleClose = (e, ws) => {
+    //     this.Logger.log(TAG, "Closed: " + e);
+    // }
 
     sendToMirror = (json) => {
         if(this.devices.get("mirror") === undefined) {

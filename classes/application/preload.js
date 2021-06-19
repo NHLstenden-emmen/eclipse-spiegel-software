@@ -1,4 +1,5 @@
 const { contextBridge, ipcRenderer } = require('electron')
+let class_ws            = require('../connections/WebSocket'), WebSocket;
 
 contextBridge.exposeInMainWorld(
     'electron',
@@ -8,3 +9,7 @@ contextBridge.exposeInMainWorld(
         }
     }
 )
+
+ipcRenderer.on('websocket', function (evt, message) {
+    console.log(message); // Returns: {'SAVED': 'File Saved'}
+});
