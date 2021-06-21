@@ -1,7 +1,4 @@
-#calender {
-    display: none;
-}
-.gridlayout .CalenderWid{
+#gridlayout .CalenderWid{
 	display: grid;
 	width: 100%;
 	height: 100%;
@@ -13,18 +10,18 @@
     grid-template-columns: 110px 90px;
 }
 
-.gridlayout .Day{
+#gridlayout .Day{
     grid-area: links;
     font-size: 40px;
     text-align: center;
     padding-left: 10px;
     
 }
-.gridlayout .Month{
+#gridlayout .Month{
     grid-area: right1;
     font-size: 25px;
 }
-.gridlayout .Year{
+#gridlayout .Year{
     grid-area: left3;
     font-size: 19px;
     text-align: center;

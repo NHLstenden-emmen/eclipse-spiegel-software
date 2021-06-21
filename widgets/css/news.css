@@ -1,7 +1,4 @@
-#news{
-    display: none;
-}
-#news .container{
+#newscontainer{
     display: flex;
     justify-content: space-between;
     padding-left: 10px;
@@ -10,7 +7,7 @@
     padding-right: 10px;
     align-items: center;
 }
-#news .container h1 {
+#newscontainer h1 {
     text-align: center;
 }
     

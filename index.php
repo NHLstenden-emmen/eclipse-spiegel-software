@@ -24,8 +24,9 @@
 		?>
 	</head>
 	<body>
-		<div class="gridlayout">
+		<div id="gridlayout">
 			<?php 
+				/*
 				// load all widgets html
 				$path = 'widgets/design/';
 				if ($handle = opendir($path)) {
@@ -39,8 +40,20 @@
 					}
 					closedir($handle);
 				}
+				*/
 			?>
 		</div>
-	<script src="WidgetLocation.js"></script>
 	</body>
+	<script src="main.js"></script>
+	<?php 
+			$path = 'widgets/js/';
+			if ($handle = opendir($path)) {
+				while (false !== ($entry = readdir($handle))) {
+					if ($entry != "." && $entry != "..") {
+						echo '<script src="'.$path. $entry. '"></script>';
+					}
+				}
+				closedir($handle);
+			}
+		?>
 </html>

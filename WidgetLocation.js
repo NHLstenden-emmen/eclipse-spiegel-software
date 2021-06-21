@@ -1,4 +1,4 @@
-const requestWidgetLocation = new XMLHttpRequest();
+/*const requestWidgetLocation = new XMLHttpRequest();
 
 requestWidgetLocation.open("GET", "https://eclipse.serverict.nl/api/noAuth/user_settings/search/1");
 requestWidgetLocation.send();
@@ -36,4 +36,4 @@ function WidgetLocation(item, index){
     element.classList.add("p"+index);
     element.style.display = "block";
   }
-}
+}*/

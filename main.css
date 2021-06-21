@@ -1,4 +1,4 @@
-.gridlayout{
+#gridlayout{
 	display: grid;
 	width: 100%;
 	height: 100%;
@@ -23,138 +23,138 @@ body{
 	margin: 0px;
 }
 
-.p1{
+#p1{
 	grid-area: één;
 }
-.p2{
+#p2{
 	grid-area: twee;
 }
-.p3{
+#p3{
 	grid-area: drie;
 }
-.p4{
+#p4{
 	grid-area: vier;
 }
-.p5{
+#p5{
 	grid-area: vijf;
 }
-.p6{
+#p6{
 	grid-area: zes;
 }
-.p7{
+#p7{
 	grid-area: zeven;
 }
-.p8{
+#p8{
 	grid-area: acht;
 }
-.p9{
+#p9{
 	grid-area: negen;
 }
-.p10{
+#p10{
 	grid-area: tien;
 }
-.p11{
+#p11{
 	grid-area: elf;
 }
-.p12{
+#p12{
 	grid-area: twaalf;
 }
-.p13{
+#p13{
 	grid-area: dertien;
 }
-.p14{
+#p14{
 	grid-area: veertien;
 }
-.p15{
+#p15{
 	grid-area: vijftien;
 }
-.p16{
+#p16{
 	grid-area: zestien;
 }
-.p17{
+#p17{
 	grid-area: zeventien;
 }
-.p18{
+#p18{
 	grid-area: achttien;
 }
-.p19{
+#p19{
 	grid-area: negentien;
 }
-.p20{
+#p20{
 	grid-area: twintig;
 }
-.p21{
+#p21{
 	grid-area: eenentwintig;
 }
-.p22{
+#p22{
 	grid-area: tweeëntwintig;
 }
-.p23{
+#p23{
 	grid-area: drieëntwintig;
 }
-.p24{
+#p24{
 	grid-area: vierentwintig;
 }
-.p25{
+#p25{
 	grid-area: vijfentwintig;
 }
-.p26{
+#p26{
 	grid-area: zesentwintig;
 }
-.p27{
+#p27{
 	grid-area: zevenentwintig;
 }
-.p28{
+#p28{
 	grid-area: achtentwintig;
 }
-.p29{
+#p29{
 	grid-area: negenentwintig;
 }
-.p30{
+#p30{
 	grid-area: dertig;
 }
-.p31{
+#p31{
 	grid-area: eenendertig;
 }
-.p32{
+#p32{
 	grid-area: tweeëndertig;
 }
-.p33{
+#p33{
 	grid-area: drieëndertig;
 }
-.p34{
+#p34{
 	grid-area: vierendertig;
 }
-.p35{
+#p35{
 	grid-area: vijfendertig;
 }
-.p36{
+#p36{
 	grid-area: zesendertig;
 }
-.p37{
+#p37{
 	grid-area: zevenendertig;
 }
-.p38{
+#p38{
 	grid-area: achtendertig;
 }
-.p39{
+#p39{
 	grid-area: negenendertig;
 }
-.p40{
+#p40{
 	grid-area: veertig;
 }
-.p41{
+#p41{
 	grid-area: eenenveertig;
 }
-.p42{
+#p42{
 	grid-area: tweeënveertig;
 }
-.p43{
+#p43{
 	grid-area: drieënveertig;
 }
-.p44{
-	grid-area: vierveertig;
+#p44{
+	grid-area: vierenveertig;
 }
-.p45{
+#p45{
 	grid-area: vijfenveertig;
 }

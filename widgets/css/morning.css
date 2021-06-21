@@ -1,7 +1,4 @@
-#morning {
-    display: none;
-}
-.gridlayout .Goodmorning{
+#gridlayout .Goodmorning{
 	display: grid;
 	width: 100%;
 	height: 100%;
@@ -12,14 +9,14 @@
     grid-template-columns: 200px;
 }
 
-.gridlayout .T1{
+#gridlayout .T1{
     grid-area: Text1;
     font-size: 15px;
     text-align: center;
     padding-top: 50px;
 }
 
-.gridlayout .T2{
+#gridlayout .T2{
     grid-area: Text2;
     font-style: italic;
     font-size: 12px;

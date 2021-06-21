@@ -1,27 +1,3 @@
-<div class="container">
-   <h1 id="timewid"> <span id="timespan"></span> </h1>
-    <script> 
-        display_time();
-        function timer_time(){
-            var refresh=1000; // Refresh rate in milli seconds
-            mytime=setTimeout('display_time()',refresh);
-        }
-        function display_time() {
-            var x = new Date();
-            var hour=x.getHours();
-            var minute=x.getMinutes();
-            //update date
-            if(hour < 1 && minute < 1){
-                display_date();
-            }
-            //update message
-            
-            if(hour <10 ){hour='0'+hour;}
-            if(minute <10 ) {minute='0' + minute; }
-            var x3 = hour+':'+minute;
-            document.getElementById('timespan').innerHTML = x3;
-            timer_time();
-        }
-        
-    </script>
+<div class="timecontainer">
+   <h1 id="timewid"><span id="timespan"></span></h1>
 </div>

@@ -1,7 +1,7 @@
 #joke{
     display: none;
 }
-#joke .container{
+#jokecontainer{
     display: flex;
     padding-left: 10px;
     height: 100%;
