@@ -20,7 +20,12 @@
 }
 
 body{
+	background-color: black;
 	margin: 0px;
+}
+
+.wi{
+	color: white;
 }
 
 #p1{

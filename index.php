@@ -7,6 +7,7 @@
 		<title>Eclipse Mirror
 		</title>
 		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="widgets/weather-icons.min.css">
 		<!-- fontawsom -->
 		<link href="fontawesome-free-5.15.3-web/css/all.css" rel="stylesheet"> 
 		<script defer src="fontawesome-free-5.15.3-web/js/all.js"></script> 
@@ -24,24 +25,7 @@
 		?>
 	</head>
 	<body>
-		<div id="gridlayout">
-			<?php 
-				/*
-				// load all widgets html
-				$path = 'widgets/design/';
-				if ($handle = opendir($path)) {
-					while (false !== ($entry = readdir($handle))) {
-						if ($entry != "." && $entry != "..") {
-							$entryClassName = basename($entry, '.html');
-							echo "<div id='".$entryClassName."'>";
-								include $path. $entry;
-							echo "</div>";
-						}
-					}
-					closedir($handle);
-				}
-				*/
-			?>
+		<div id="gridlayout" style="opacity:0">
 		</div>
 	</body>
 	<script src="main.js"></script>

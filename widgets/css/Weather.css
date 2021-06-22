@@ -1,42 +1,40 @@
-#weather{
-    display: none;
-}
-#gridlayout .WeatherWid{
+.WeatherWid{
 	display: grid;
 	width: 100%;
 	height: 100%;
 	grid-template-areas: 
-    "Location Picture"
-    "Celcius Celcius"
-    "Celcius Celcius";
+    "Location Location"
+    "Celcius Picture"
+    "description description";
     grid-template-rows: 73px 73px 73px;
     grid-template-columns: 120px 80px;
 }
 
-#gridlayout .City{
+.city{
     grid-area: Location;
-    font-size: 17px;
+    font-size: 30px;
     text-align: left;
     padding-left: 4px;
 }
 
-#gridlayout .PC{
+.icon{
     grid-area: Picture;
-
 }
 
-#gridlayout .CC{
+.temp{
     grid-area: Celcius;
-    font-size: 18px;
+    font-size: 28px;
+    text-align: end;
+    text-align: left;
+}
+
+.description{
+    grid-area: description;
+    font-size: 28px;
     text-align: left;
     padding-left: 4px;
-    padding-top: 42px;
-}
-
-.WH{
-    
     text-align: start;
-    margin-top: -9px;
+    margin-top: -3px;
 }
 
 .CC-text{

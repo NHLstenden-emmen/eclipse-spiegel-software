@@ -9,11 +9,11 @@ function display_morning() {
 
   for(var i = 0; i < data.length; i++){
     if(hr >= data[i][0] && hr <= data[i][1]){
-      try {
-        document.getElementById("morningmessage").innerHTML = data[i][2];
-      } catch (error) {
-        return;
-      }  
+      morningElements = document.getElementsByClassName("morningmessage");
+      for (j=0; j < morningElements.length; j++) {
+        //console.log(elements[j]);
+        morningElements[j].innerHTML = data[i][2];
+      }
     }
   }
 }

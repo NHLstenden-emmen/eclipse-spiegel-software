@@ -1,24 +1,40 @@
 function timer_time(){
     var refresh=1000; // Refresh rate in milli seconds
-    mytime=setTimeout('display_time()',refresh);
+    // call function display time everytime refresh seconds has passed
+    setInterval('display_time()',refresh);
 }
 function display_time() {
-    var x = new Date();
-    var hour=x.getHours();
-    var minute=x.getMinutes();
-    //update date
-    if(hour < 1 && minute < 1){
-        display_date();
+    // get list of time widgets
+    timeElements = document.getElementsByClassName("timespan");
+    for (j=0; j < timeElements.length; j++) {
+        // get time
+        var x = new Date();
+        var hour=x.getHours();
+        var minute=x.getMinutes();
+
+        timezone = timeElements[j].parentNode.parentNode.parentNode.getAttribute('param');
+        //if there is a timezone selected change hours with amount of timezone
+        if(timezone != NaN){
+            hour += parseInt(timezone);
+        }
+        //if hours is more than 24 substract 24
+        if(hour >24 ){
+            hour -= 24;
+        }
+        // if hour is a single digit add a zero before the digit
+        if(hour <10 ){
+            hour = '0' + hour;
+        }
+        // if minute is a single digit add a zero before the digit
+        if(minute <10 ) {
+            minute = '0' + minute;
+        }
+        //combine hour en minute in to 1 string
+        var x3 = hour+':'+minute;
+        try {
+            timeElements[j].innerHTML = x3;
+        } catch (error) {
+            return;
+        }
     }
-    //update message
-    
-    if(hour <10 ){hour='0'+hour;}
-    if(minute <10 ) {minute='0' + minute; }
-    var x3 = hour+':'+minute;
-    try {
-        document.getElementById('timespan').innerHTML = x3;
-    } catch (error) {
-        return;
-    }
-    timer_time();
 }

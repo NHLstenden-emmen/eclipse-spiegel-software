@@ -37,7 +37,7 @@ function display_news() {
 
 function timer_news(){
     var refresh=10000; // Refresh rate in milli seconds
-    mytime=setTimeout('loop_news()',refresh);
+    setInterval('loop_news()',refresh);
 }
 
 function loop_news(){
@@ -50,5 +50,4 @@ function loop_news(){
     return;
   }
   j++;
-  timer_news();
 }
