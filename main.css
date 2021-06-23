@@ -17,6 +17,7 @@
 			font-family: Bahnschrift;
 			background-color: black;
 			color: white;
+	opacity: 0;
 }
 
 body{
