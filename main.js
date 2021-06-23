@@ -1,8 +1,8 @@
-test = '{"0":["time:5"],"1":["weather:2755251"],"2":["meme"],"3":["time:0"],"4":["calender"],"5":["news"],"6":["morning"],"7":["empty"],"8":["weather:2756136"],"9":["empty"],"10":["empty"],"11":["empty"],"12":["empty"],"13":["news_business"],"14":["news_entertainment"],"15":["empty"],"16":["empty"],"17":["empty"],"18":["empty"],"19":["empty"],"20":["empty"],"21":["empty"],"22":["empty"],"23":["empty"],"24":["empty"],"25":["empty"],"26":["empty"],"27":["empty"],"28":["empty"],"29":["empty"],"30":["empty"],"31":["empty"],"32":["empty"],"33":["empty"],"34":["empty"],"35":["empty"],"36":["empty"],"37":["empty"],"38":["empty"],"39":["empty"],"40":["empty"],"41":["empty"],"42":["empty"],"43":["empty"],"44":["empty"]}';
+test = '{"0":["empty"],"1":["empty"],"2":["empty"],"3":["empty"],"4":["empty"],"5":["empty"],"6":["empty"],"7":["empty"],"8":["empty"],"9":["empty"],"10":["empty"],"11":["empty"],"12":["empty"],"13":["empty"],"14":["empty"],"15":["empty"],"16":["empty"],"17":["empty"],"18":["empty"],"19":["empty"],"20":["empty"],"21":["empty"],"22":["morning"],"23":["empty"],"24":["empty"],"25":["empty"],"26":["empty"],"27":["empty"],"28":["empty"],"29":["empty"],"30":["empty"],"31":["empty"],"32":["empty"],"33":["empty"],"34":["empty"],"35":["empty"],"36":["empty"],"37":["empty"],"38":["empty"],"39":["empty"],"40":["empty"],"41":["empty"],"42":["empty"],"43":["empty"],"44":["empty"]}';
 initialize_locations(test);
-//setTimeout(() => {  test = '{"0":["news"],"1":["weather:2755251"],"2":["joke"],"3":["empty"],"4":["calender"],"5":["empty"],"6":["morning"],"7":["empty"],"8":["weather:2756136"],"9":["empty"],"10":["empty"],"11":["empty"],"12":["empty"],"13":["news"],"14":["empty"],"15":["empty"],"16":["empty"],"17":["empty"],"18":["empty"],"19":["empty"],"20":["empty"],"21":["empty"],"22":["empty"],"23":["empty"],"24":["empty"],"25":["empty"],"26":["empty"],"27":["empty"],"28":["empty"],"29":["empty"],"30":["empty"],"31":["empty"],"32":["empty"],"33":["empty"],"34":["empty"],"35":["empty"],"36":["empty"],"37":["empty"],"38":["empty"],"39":["empty"],"40":["empty"],"41":["empty"],"42":["empty"],"43":["empty"],"44":["empty"]}'; update_locations(test); }, 4000);
+//setTimeout(() => {  test = '{"0":["news"],"1":["weather:2755251"],"2":["joke"],"3":["empty"],"4":["calender"],"5":["empty"],"6":["morning"],"7":["empty"],"8":["weather",2756136,"Emmen"],"9":["empty"],"10":["empty"],"11":["empty"],"12":["empty"],"13":["news"],"14":["empty"],"15":["empty"],"16":["empty"],"17":["empty"],"18":["empty"],"19":["empty"],"20":["empty"],"21":["empty"],"22":["empty"],"23":["empty"],"24":["empty"],"25":["empty"],"26":["empty"],"27":["empty"],"28":["empty"],"29":["empty"],"30":["empty"],"31":["empty"],"32":["empty"],"33":["empty"],"34":["empty"],"35":["empty"],"36":["empty"],"37":["empty"],"38":["empty"],"39":["empty"],"40":["empty"],"41":["empty"],"42":["empty"],"43":["empty"],"44":["empty"]}'; update_locations(test); }, 4000);
 //console.log(test);
-setTimeout(() => {  test = '{"0":["news_health"],"1":["weather:2755251"],"2":["meme"],"3":["time:0"],"4":["calender"],"5":["news"],"6":["morning"],"7":["empty"],"8":["weather:2756136"],"9":["empty"],"10":["empty"],"11":["empty"],"12":["empty"],"13":["news_business"],"14":["news_entertainment"],"15":["empty"],"16":["empty"],"17":["empty"],"18":["empty"],"19":["empty"],"20":["empty"],"21":["empty"],"22":["empty"],"23":["empty"],"24":["empty"],"25":["empty"],"26":["empty"],"27":["empty"],"28":["empty"],"29":["empty"],"30":["empty"],"31":["empty"],"32":["empty"],"33":["empty"],"34":["empty"],"35":["empty"],"36":["empty"],"37":["empty"],"38":["empty"],"39":["empty"],"40":["empty"],"41":["empty"],"42":["empty"],"43":["empty"],"44":["empty"]}';update_locations(test); }, 4000);
+setTimeout(() => {  test = '{"0":["news_health"],"1":["weather",2755251,"Emmen"],"2":["meme"],"3":["time"],"4":["calender"],"5":["news"],"6":["morning"],"7":["time"],"8":["empty"],"9":["empty"],"10":["empty"],"11":["empty"],"12":["weather",2756136,"Emmen"],"13":["news_business"],"14":["news_entertainment"],"15":["empty"],"16":["empty"],"17":["empty"],"18":["empty"],"19":["empty"],"20":["empty"],"21":["empty"],"22":["empty"],"23":["empty"],"24":["empty"],"25":["empty"],"26":["empty"],"27":["empty"],"28":["empty"],"29":["empty"],"30":["empty"],"31":["empty"],"32":["empty"],"33":["empty"],"34":["empty"],"35":["empty"],"36":["empty"],"37":["empty"],"38":["empty"],"39":["empty"],"40":["empty"],"41":["empty"],"42":["empty"],"43":["empty"],"44":["empty"]}';update_locations(test); }, 2000);
 var widgetResponse;
 var started = false;
 var Opacity = 0;
@@ -13,10 +13,11 @@ display_weather();
 
 // initialize locations and fill them with widgets
 function initialize_locations(LocationJSONArray) {
+    console.log(LocationJSONArray);
     responseWidgetLocation = JSON.parse(LocationJSONArray);
     var i;
     gridlayout = document.getElementById("gridlayout")
-
+    // create 45 <div> elements with coresponding elements
     for (initializeGridIndex = 1; initializeGridIndex < 46; initializeGridIndex++) {
         gridlayout.insertAdjacentHTML('beforeend', "<div id='p" + initializeGridIndex + "'></div>");
     }
@@ -24,21 +25,26 @@ function initialize_locations(LocationJSONArray) {
     for (initializeIndex = 0; initializeIndex < 45; initializeIndex++) {
         gridIndex = initializeIndex + 1;
         gridElement = document.getElementById("p" + gridIndex);
+        console.log(responseWidgetLocation[initializeIndex][0]);
         if (responseWidgetLocation[initializeIndex][0] == "empty") {
+            //widgettype is empty
             gridElement.setAttribute("widgetType", responseWidgetLocation[initializeIndex][0]);
-        } else if (responseWidgetLocation[initializeIndex][0].includes(":")) {
-            responseWidgetLocationArray = responseWidgetLocation[initializeIndex][0].split(":")
-            file = "widgets/design/" + responseWidgetLocationArray[0] + ".html";
+        } else if (responseWidgetLocation[initializeIndex][0] == "weather") {
+            //widgettype is weather
+            console.log(responseWidgetLocation[initializeIndex][1]);
+            file = "widgets/design/" + responseWidgetLocation[initializeIndex][0] + ".html";
             gridElement.setAttribute("w3-include-html", file.toLowerCase());
-            gridElement.setAttribute("widgetType", responseWidgetLocationArray[0]);
-            gridElement.setAttribute("param", responseWidgetLocationArray[1]);
+            gridElement.setAttribute("widgetType", responseWidgetLocation[initializeIndex][0]);
+            gridElement.setAttribute("param", responseWidgetLocation[initializeIndex][1]);
         } else if (responseWidgetLocation[initializeIndex][0].includes("_")) {
+            // widgettype contains a _ (news widget)
             responseWidgetLocationArray = responseWidgetLocation[initializeIndex][0].split("_")
             file = "widgets/design/" + responseWidgetLocationArray[0] + ".html";
             gridElement.setAttribute("w3-include-html", file.toLowerCase());
             gridElement.setAttribute("widgetType", responseWidgetLocationArray[0]);
             gridElement.setAttribute("param", responseWidgetLocationArray[1]);
         } else {
+            // regular widget
             file = "widgets/design/" + responseWidgetLocation[initializeIndex][0] + ".html";
             gridElement.setAttribute("w3-include-html", file.toLowerCase());
             gridElement.setAttribute("widgetType", responseWidgetLocation[initializeIndex][0]);
@@ -64,18 +70,17 @@ function update_locations(LocationJSONArray) {
                 gridElement.setAttribute("w3-include-html", "empty");
                 gridElement.removeAttribute("param");
             }
-        } else if (responseWidgetLocation[updateIndex][0].includes(":")) {
-            // Widget + param
-            responseWidgetLocationArray = responseWidgetLocation[updateIndex][0].split(":")
-            if (gridElement.getAttribute("widgetType") != responseWidgetLocationArray[0]) {
+        } else if (responseWidgetLocation[updateIndex][0] == "weather") {
+            // Widget + param (weather)
+            if (gridElement.getAttribute("widgetType") != responseWidgetLocation[0]) {
                 // different widget (weather)
-                file = "widgets/design/" + responseWidgetLocationArray[0] + ".html";
+                file = "widgets/design/" + responseWidgetLocation[updateIndex][0] + ".html";
                 gridElement.setAttribute("w3-include-html", file.toLowerCase());
-                gridElement.setAttribute("widgetType", responseWidgetLocationArray[0]);
-                gridElement.setAttribute("param", responseWidgetLocationArray[1]);
-            } else if (gridElement.getAttribute("param") != responseWidgetLocationArray[1]) {
+                gridElement.setAttribute("widgetType", responseWidgetLocation[updateIndex][0]);
+                gridElement.setAttribute("param", responseWidgetLocation[updateIndex][1]);
+            } else if (gridElement.getAttribute("param") != responseWidgetLocation[updateIndex][1]) {
                 // same widget different parameter
-                gridElement.setAttribute("param", responseWidgetLocationArray[1]);
+                gridElement.setAttribute("param", responseWidgetLocation[updateIndex][1]);
             }
             // dont do anything if widget and param are the same
         } else if (responseWidgetLocation[updateIndex][0].includes("_")) {
@@ -97,6 +102,7 @@ function update_locations(LocationJSONArray) {
             console.log(responseWidgetLocation[updateIndex][0]);
             file = "widgets/design/" + responseWidgetLocation[updateIndex][0] + ".html";
             gridElement.setAttribute("w3-include-html", file.toLowerCase());
+            gridElement.setAttribute("widgetType", responseWidgetLocation[updateIndex][0]);
             gridElement.removeAttribute("param");
         }
     }
@@ -115,6 +121,7 @@ function retrieve_widget_data() {
     widgetRequest.onload = () => {
         if (widgetRequest.status === 200) {
             widgetResponse = JSON.parse(widgetRequest.response);
+            console.log(widgetResponse);
             console.log("Retrieved data");
         } else {
             console.log('error ${request.status}')
@@ -205,14 +212,14 @@ function timer() {
 function show() {
     //fade in
     console.log("show")
-    element = document.getElementById("gridlayout")
     var op = 0.1;  // initial opacity
     var timershow = setInterval(function () {
         if (op >= 1) {
+            op = 1
             clearInterval(timershow);
         }
-        element.style.opacity = op;
-        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        gridlayout.style.opacity = op;
+        //gridlayout.style.filter = 'alpha(opacity=' + op * 100 + ")";
         op += op * 0.05;
     }, 10);
 }
@@ -220,14 +227,14 @@ function show() {
 function hide() {
     //fade out
     console.log("hide")
-    element = document.getElementById("gridlayout")
     var op = 1;  // initial opacity
     var timerhide = setInterval(function () {
         if (op <= 0.01) {
+            op = 0
             clearInterval(timerhide);
         }
-        element.style.opacity = op;
-        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        gridlayout.style.opacity = op;
+        //gridlayout.style.filter = 'alpha(opacity=' + op * 100 + ")";
         op -= op * 0.05;
     }, 10);
 }
@@ -356,33 +363,24 @@ function timer_time() {
 }
 
 function display_time() {
+    // get time
+    var x = new Date();
+    var hour = x.getHours();
+    var minute = x.getMinutes();
+
+    // if hour is a single digit add a zero before the digit
+    if (hour < 10) {
+        hour = '0' + hour;
+    }
+    // if minute is a single digit add a zero before the digit
+    if (minute < 10) {
+        minute = '0' + minute;
+    }
+    //combine hour en minute in to 1 string
+    var x3 = hour + ':' + minute;
     // get list of time widgets
     timeElements = document.getElementsByClassName("timespan");
     for (timeIndex = 0; timeIndex < timeElements.length; timeIndex++) {
-        // get time
-        var x = new Date();
-        var hour = x.getHours();
-        var minute = x.getMinutes();
-
-        timezone = timeElements[timeIndex].parentNode.parentNode.parentNode.getAttribute('param');
-        //if there is a timezone selected change hours with amount of timezone
-        if (timezone != NaN) {
-            hour += parseInt(timezone);
-        }
-        //if hours is more than 24 substract 24
-        if (hour > 24) {
-            hour -= 24;
-        }
-        // if hour is a single digit add a zero before the digit
-        if (hour < 10) {
-            hour = '0' + hour;
-        }
-        // if minute is a single digit add a zero before the digit
-        if (minute < 10) {
-            minute = '0' + minute;
-        }
-        //combine hour en minute in to 1 string
-        var x3 = hour + ':' + minute;
         try {
             timeElements[timeIndex].innerHTML = x3;
         } catch (error) {
