@@ -6,6 +6,8 @@ let class_window              = require('./classes/application/Window'), Window;
 let class_logger              = require('./classes/logger/Logger'), Logger;
 let class_serial              = require('./classes/hardware/serial/SerialManager'), Serial;
 //let class_storage             = require('./classes/application/storage/StorageManager'), Storage;
+let dnssd               = require('dnssd'), advertisement = new dnssd.Advertisement(dnssd.tcp('eclipse-mirror'), 49154);
+
 let ws_server;
 
 ipcMain.on("do-a-thing", (event, arg) => {
@@ -20,7 +22,8 @@ const createWindow = () => {
 
 const ready = () => {
     createWindow();
-
+   advertisement.start();
+``
     ws_server = new ws.Server({port: 49154});
     ws_server.on('connection', connectionHandler);
 
@@ -37,19 +40,23 @@ const ready = () => {
 }
 
 const connectionHandler = (ws) => {
-    console.log("new conneciton");
+    console.log("new connection");
     ws.on('message', (message)  => incomingHandler(message, ws));
     ws.on('close', (e)          => handleClose(e, ws));
 }
 
 const incomingHandler = (message, ws) => {
-    Window.webContents.send('websocket', {'message': message});
 
     console.log("Incoming: " + message)
-    let json = this.Logger.parseJSON(message);
-
-    switch (json.type) {
+    let json = Logger.parseJSON(message);
+ 
+    console.log(json)
+    switch(json.type) {
+        case 'color':
+            Serial.rgb(json.r, json.g, json.b);
+            break;
         default:
+            Window.webContents.send('websocket', {'message': message});
             break;
     }
     //switch structure
@@ -61,7 +68,8 @@ const handleClose = (e, ws) => {
 
 const close = () => {
     if (process.platform !== 'darwin') {
-        WebSocket.close();
+        advertisement.stop();
+        //WebSocket.close();
         app.quit()
     }
 }

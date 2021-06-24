@@ -1,14 +1,14 @@
-.news .container{
+#newscontainer{
     display: flex;
     justify-content: space-between;
     padding-left: 10px;
     height: 100%;
-    font-size: 34px;
+    font-size: 12px;
     padding-right: 10px;
     align-items: center;
 }
-.news .container .arrow{
-    opacity: .5;
+#newscontainer h1 {
+    text-align: center;
 }
     
 

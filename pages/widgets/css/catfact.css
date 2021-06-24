@@ -1,0 +1,11 @@
+#catfactcontainer{
+    display: flex;
+    padding: 0px 10px;
+    height: 220px;
+    font-size: 12px;
+    text-align: center;
+}
+
+#catfactcontainer h1{
+    margin: 0px;
+}

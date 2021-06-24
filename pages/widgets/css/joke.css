@@ -1,0 +1,11 @@
+#joke{
+    display: none;
+}
+#jokecontainer{
+    display: flex;
+    padding-left: 10px;
+    height: 100%;
+    font-size: 15px;
+    padding-right: 10px;
+    text-align: center;
+}
